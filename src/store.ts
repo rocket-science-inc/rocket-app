@@ -4,14 +4,20 @@ import storage from 'redux-persist/lib/storage';
 import thunk from "redux-thunk"
 import * as logger from "redux-logger";
 
-import { MainScreenReducer } from "./screens/main/main.reducer";
+import { EventsScreenReducer } from "./screens/main/events/events.reducer";
+import { SampleScreenReducer } from "./screens/sample/sample.reducer";
+import { EventsScreenListTabReducer } from "./screens/main/events/list/events.list.reducer";
+import { EventsScreenMapTabReducer } from "./screens/main/events/map/events.map.reducer";
 
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
 const middleware = [thunk]
 
 const rootReducer = combineReducers({
-	MainScreenReducer
+	events: EventsScreenReducer,
+	sample: SampleScreenReducer,
+	eventsList: EventsScreenListTabReducer,
+	eventsMap: EventsScreenMapTabReducer
 })
 
 if (process.env.NODE_ENV !== "production") {

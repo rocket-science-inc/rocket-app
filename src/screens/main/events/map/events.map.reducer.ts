@@ -1,6 +1,6 @@
 let _state = { data: [] };
 
-export function MainScreenReducer (state:any = _state, action:any) {
+export function EventsScreenMapTabReducer (state:any = _state, action:any) {
 	switch (action.type) {
         case "ANY":
             return {...state, data: [1]}

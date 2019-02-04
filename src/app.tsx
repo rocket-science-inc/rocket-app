@@ -2,24 +2,13 @@ import React from "react"
 import { Provider, connect } from "react-redux"
 import { Router, Actions, Scene } from "react-native-router-flux"
 import { PersistGate } from "redux-persist/integration/react";
+import { Icon } from "native-base";
 // import EStyleSheet from "react-native-extended-stylesheet"
 // import { persistor, store } from "src/redux/Store/Store"
 // import GlobalStyles from "src/views/common/GlobalStyles"
 
-// import Splash from "src/views/pages/Splash"
-// import Onboarding from "src/views/pages/Onboarding"
-// import Interests from "src/views/pages/Interests"
-// import Profile from "src/views/pages/Profile"
-// import EditProfile from "src/views/pages/EditProfile"
-// import UserProfile from "src/views/pages/UserProfile"
-// import Settings from "src/views/pages/Settings"
-// import Main from "src/views/pages/Main"
-// import ChatList from "src/views/pages/ChatList"
-// import Chat from "src/views/pages/Chat"
-// import ChatSettings from "src/views/pages/ChatSettings"
-// import LoadingView from "src/views/components/LoadingView"
-
-import { MainScreenContainer } from "./screens/main/main.container";
+import { EventsScreenContainer } from "./screens/main/events/events.container";
+import { SampleScreenContainer } from "./screens/sample/sample.container";
 
 import { Loading } from "./commons/loading/loading.component";
 
@@ -36,7 +25,32 @@ const ConnectedRouter = connect(/*state & dispatch for auth and initial props*/)
 
 const Scenes = Actions.create(
 	<Scene key="root">
-		<Scene key="main" hideNavBar component={MainScreenContainer} />
+		<Scene key="main" hideNavBar tabs={true} lazy={false}>
+			<Scene hideNavBar
+				tabBarLabel={"Events"}
+				key="main.events"
+				icon={() => <Icon name="calendar" />}
+				component={EventsScreenContainer}
+			/>
+			<Scene hideNavBar
+				tabBarLabel={"Menu 1"}
+				key="main.menu1"
+				icon={() => <Icon name="bookmark" />}
+				component={SampleScreenContainer}
+			/>
+			<Scene hideNavBar
+				tabBarLabel={"Menu 2"}
+				key="main.menu2"
+				icon={() => <Icon name="bookmark" />}
+				component={SampleScreenContainer}
+			/>
+			<Scene hideNavBar
+				tabBarLabel={"Menu 3"}
+				key="main.menu3"
+				icon={() => <Icon name="bookmark" />}
+				component={SampleScreenContainer}
+			/>
+		</Scene>
 		{/* <Scene key="splash" hideNavBar component={Splash} />
 		<Scene key="onboarding" hideNavBar component={Onboarding} />
 		<Scene key="interests" hideNavBar component={Interests} />
