@@ -1,1 +1,5 @@
-export const TYPES = {};
+export const TYPES = {
+    IN_PROGRESS: "IN_PROGRESS",
+    LOADING: "LOADING",
+    EVENTS_LOADED: "EVENTS_LOADED"
+};

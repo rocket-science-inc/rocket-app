@@ -1,9 +1,13 @@
-let _state = { data: [] };
+import { TYPES } from "@configs/types";
 
-export function EventsScreenListTabReducer (state:any = _state, action:any) {
-	switch (action.type) {
-        case "ANY":
-            return {...state, data: [1]}
+let _state = {
+	events: []
+};
+
+export function EventsScreenListTabReducer (state:any = _state, {type, payload}) {
+	switch (type) {
+		case TYPES.EVENTS_LOADED:
+            return {...state, events: payload.events}
 		default:
 			return state
 	}

@@ -31,6 +31,7 @@ export class EventsScreen extends React.Component<any, any> {
                     last={index == 1}
                     active={this.state.active == tab.name}
                     onPress={() => this.switch(tab.name)}
+                    key={index}
                 >
                     <Text>{tab.label}</Text>
                 </Button>
