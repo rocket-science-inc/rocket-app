@@ -8,6 +8,7 @@ import { EventsScreenReducer } from "./screens/main/events/events.reducer";
 import { SampleScreenReducer } from "./screens/sample/sample.reducer";
 import { EventsScreenListTabReducer } from "./screens/main/events/list/events.list.reducer";
 import { EventsScreenMapTabReducer } from "./screens/main/events/map/events.map.reducer";
+import { HomeScreenReducer } from "./screens/main/home/home.reducer";
 
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
 	events: EventsScreenReducer,
 	sample: SampleScreenReducer,
 	eventsList: EventsScreenListTabReducer,
-	eventsMap: EventsScreenMapTabReducer
+	eventsMap: EventsScreenMapTabReducer,
+	home: HomeScreenReducer
 })
 
 if (process.env.NODE_ENV !== "production") {

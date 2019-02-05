@@ -7,5 +7,4 @@ export const getEvents = () => {
             return dispatch(Actions.eventsLoaded(events))
         })
 	}
-    
-}
+};

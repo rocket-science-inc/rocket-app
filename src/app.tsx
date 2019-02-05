@@ -2,15 +2,14 @@ import React from "react"
 import { Provider, connect } from "react-redux"
 import { Router, Actions, Scene } from "react-native-router-flux"
 import { PersistGate } from "redux-persist/integration/react";
-import { Icon } from "native-base";
+import { Icon, Loader } from "@commons/components";
 // import EStyleSheet from "react-native-extended-stylesheet"
 // import { persistor, store } from "src/redux/Store/Store"
 // import GlobalStyles from "src/views/common/GlobalStyles"
 
 import { EventsScreenContainer } from "./screens/main/events/events.container";
 import { SampleScreenContainer } from "./screens/sample/sample.container";
-
-import { Loading } from "./commons/loading/loading.component";
+import { HomeScreenContainer } from "./screens/main/home/home.container";
 
 import { store, persistor } from "./store";
 
@@ -20,34 +19,34 @@ console.ignoredYellowBox = ['Remote debugger', 'Warning: isMounted(...) is depre
 // Build the stylesheets
 // EStyleSheet.build(GlobalStyles);
 
-// Connect redux with router flux
-const ConnectedRouter = connect(/*state & dispatch for auth and initial props*/)(Router)
+const ReduxRouter = connect()(Router);
 
 const Scenes = Actions.create(
 	<Scene key="root">
-		<Scene key="main" hideNavBar tabs={true} lazy={false}>
-			<Scene hideNavBar
-				tabBarLabel={"Events"}
+		<Scene key="main" hideNavBar tabs={true} showLabel={false} lazy={false}>
+			<Scene hideNavBar 
 				key="main.events"
-				icon={() => <Icon name="calendar" />}
-				component={EventsScreenContainer}
+				icon={() => <Icon name="home" size={22} />}
+				component={HomeScreenContainer}
 			/>
 			<Scene hideNavBar
-				tabBarLabel={"Menu 1"}
-				key="main.menu1"
-				icon={() => <Icon name="bookmark" />}
+				key="main.chats"
+				icon={() => <Icon name="message-square" size={22} />}
 				component={SampleScreenContainer}
 			/>
 			<Scene hideNavBar
-				tabBarLabel={"Menu 2"}
+				key="main.qrcode"
+				icon={() => <Icon name="qrcode" size={30} />}
+				component={SampleScreenContainer}
+			/>
+			<Scene hideNavBar
 				key="main.menu2"
-				icon={() => <Icon name="bookmark" />}
+				icon={() => <Icon name="bookmark" size={22} />}
 				component={SampleScreenContainer}
 			/>
 			<Scene hideNavBar
-				tabBarLabel={"Menu 3"}
-				key="main.menu3"
-				icon={() => <Icon name="bookmark" />}
+				key="main.user"
+				icon={() => <Icon name="user" size={22} />}
 				component={SampleScreenContainer}
 			/>
 		</Scene>
@@ -72,8 +71,8 @@ const Scenes = Actions.create(
 
 export const App = () => (
 	<Provider store={store}>
-		<PersistGate loading={<Loading />} persistor={persistor}>
-			<ConnectedRouter scenes={Scenes} />
+		<PersistGate loading={<Loader />} persistor={persistor}>
+			<ReduxRouter scenes={Scenes} />
 		</PersistGate>
 	</Provider>
 );
