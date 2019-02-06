@@ -3,9 +3,8 @@ import { Provider, connect } from "react-redux"
 import { Router, Actions, Scene } from "react-native-router-flux"
 import { PersistGate } from "redux-persist/integration/react";
 import { Icon, Loader } from "@commons/components";
-// import EStyleSheet from "react-native-extended-stylesheet"
-// import { persistor, store } from "src/redux/Store/Store"
-// import GlobalStyles from "src/views/common/GlobalStyles"
+import { GlobalStyles } from "@commons/styles";
+import StyleSheet from "react-native-extended-stylesheet"
 
 import { EventsScreenContainer } from "./screens/main/events/events.container";
 import { SampleScreenContainer } from "./screens/sample/sample.container";
@@ -17,7 +16,7 @@ import { store, persistor } from "./store";
 console.ignoredYellowBox = ['Remote debugger', 'Warning: isMounted(...) is deprecated', 'Task orphaned'];
 
 // Build the stylesheets
-// EStyleSheet.build(GlobalStyles);
+StyleSheet.build(GlobalStyles);
 
 const ReduxRouter = connect()(Router);
 

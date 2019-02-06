@@ -9,3 +9,9 @@ export const loading = (loading) => ({
 	status: "success",
 	payload: { loading }
 });
+
+export const feedLoaded = (feed) => ({
+	type: TYPES.FEED_LOADED,
+	status: "success",
+	payload: { feed }
+});

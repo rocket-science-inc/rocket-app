@@ -1,9 +1,11 @@
-let _state = { data: [] };
+import { TYPES } from "@configs/types";
 
-export function HomeScreenReducer (state:any = _state, action:any) {
-	switch (action.type) {
-        case "ANY":
-            return {...state, data: [1]}
+let _state = { feed: [] };
+
+export function HomeScreenReducer (state:any = _state, { type, payload }) {
+	switch (type) {
+        case TYPES.FEED_LOADED:
+            return {...state, feed: [...state.feed, ...payload.feed] }
 		default:
 			return state
 	}

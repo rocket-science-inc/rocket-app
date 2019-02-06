@@ -44,4 +44,4 @@ export const store = configureStore();
 export const persistor = persistStore(store);
 
 /* Uncomment to purge store */
-// persistor.purge()
+persistor.purge()
