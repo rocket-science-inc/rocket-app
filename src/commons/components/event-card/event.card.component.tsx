@@ -27,7 +27,7 @@ export class EventCard extends React.Component<IProps, IState> {
                 </CardItem>
                 <CardItem>
                     <Body>
-                        <Text style={styles.date}>{Date.format(this.props.start, "ll LT")}</Text>
+                        <Text note style={styles.date}>{Date.format(this.props.start, "ll LT")}</Text>
                         <Text style={styles.title}>{this.props.title}</Text>
                         <Text note>{this.props.location.streetAddress}</Text>
                     </Body>
