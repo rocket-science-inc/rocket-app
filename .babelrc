@@ -6,7 +6,8 @@
             "alias": {
                 "@configs": "rocket/src/configs",
                 "@providers": "rocket/src/providers",
-                "@commons": "rocket/src/commons"
+                "@commons": "rocket/src/commons",
+                "@api": "rocket/src/api"
             }
         }]
     ]

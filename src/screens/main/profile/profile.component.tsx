@@ -6,31 +6,20 @@ import {
 } from "native-base";
 import { FlatList } from "react-native";
 import { EventCard, Icon } from "@commons/components";
-import { IHomeScreenOperations } from "./home.operations";
+import { IHomeScreenOperations } from "./profile.operations";
 
-export interface IHomeScreenProps extends IHomeScreenOperations {
+export interface IProfileScreenProps extends IHomeScreenOperations {
     records: any[]
 };
 
-export interface IHomeScreenState {
+export interface IProfileScreenState {
 
 };
 
-export class HomeScreen extends React.Component<IHomeScreenProps, IHomeScreenState> {
+export class ProfileScreen extends React.Component<IProfileScreenProps, IProfileScreenState> {
 
     constructor(props){
         super(props);
-    };
-
-    public componentDidMount():void {
-        this.props.loadFeed({
-            page: 1,
-            count: 25
-        });
-    };
-
-    private renderCard({ item }):any {
-        return (<EventCard {...item} key={item.id} />)
     };
 
     public render():any {
@@ -39,24 +28,19 @@ export class HomeScreen extends React.Component<IHomeScreenProps, IHomeScreenSta
                 <Header>
                     <Left>
                         <Button transparent>
-                            <Icon name="bell" size={20} />
+                            <Icon name="settings" size={20} />
                         </Button>
                     </Left>
                     <Body>
-                        <Title>Rocket</Title>
+                        <Title>Profile</Title>
                     </Body>
                     <Right>
                         <Button transparent>
-                            <Icon name="calendar" size={20} />
+                            <Icon name="qrcode" size={20} />
                         </Button>
                     </Right>
                 </Header>
                 <Content>
-                    <FlatList
-                        data={this.props.records}
-                        renderItem={this.renderCard.bind(this)}
-                        keyExtractor={(item) => item.id}
-                    />
                 </Content>
             </Container>
         )

@@ -6,9 +6,10 @@ import { Icon, Loader } from "@commons/components";
 import { GlobalStyles } from "@commons/styles";
 import StyleSheet from "react-native-extended-stylesheet"
 
-import { EventsScreenContainer } from "./screens/main/events/events.container";
+import { ProfileScreenContainer } from "./screens/main/profile/profile.container";
 import { SampleScreenContainer } from "./screens/sample/sample.container";
 import { HomeScreenContainer } from "./screens/main/home/home.container";
+import { CheckinScreenContainer } from "./screens/main/checkin/checkin.container";
 
 import { store, persistor } from "./store";
 
@@ -24,47 +25,21 @@ const Scenes = Actions.create(
 	<Scene key="root">
 		<Scene key="main" hideNavBar tabs={true} showLabel={false} lazy={false}>
 			<Scene hideNavBar 
-				key="main.events"
+				key="main.feed"
 				icon={() => <Icon name="home" size={22} />}
 				component={HomeScreenContainer}
 			/>
 			<Scene hideNavBar
-				key="main.chats"
-				icon={() => <Icon name="message-square" size={22} />}
-				component={SampleScreenContainer}
+				key="main.checkin"
+				icon={() => <Icon name="map-pin" size={30} />}
+				component={CheckinScreenContainer}
 			/>
 			<Scene hideNavBar
-				key="main.qrcode"
-				icon={() => <Icon name="qrcode" size={30} />}
-				component={SampleScreenContainer}
-			/>
-			<Scene hideNavBar
-				key="main.menu2"
-				icon={() => <Icon name="bookmark" size={22} />}
-				component={SampleScreenContainer}
-			/>
-			<Scene hideNavBar
-				key="main.user"
+				key="main.profile"
 				icon={() => <Icon name="user" size={22} />}
-				component={SampleScreenContainer}
+				component={ProfileScreenContainer}
 			/>
 		</Scene>
-		{/* <Scene key="splash" hideNavBar component={Splash} />
-		<Scene key="onboarding" hideNavBar component={Onboarding} />
-		<Scene key="interests" hideNavBar component={Interests} />
-		<Scene key="main"
-			tabs
-			lazy={false}
-			hideTabBar>
-			<Scene key="profile" hideNavBar component={Profile} />
-			<Scene key="home" initial hideNavBar component={Main} />
-			<Scene key="chatList" hideNavBar component={ChatList} />
-		</Scene>
-		<Scene key="editProfile" hideNavBar component={EditProfile} />
-		<Scene key="userProfile" hideNavBar component={UserProfile} />
-		<Scene key="settings" hideNavBar component={Settings} />
-		<Scene key="chat" hideNavBar component={Chat} />
-		<Scene key="chatSettings" hideNavBar component={ChatSettings} /> */}
 	</Scene>,
 )
 

@@ -5,8 +5,8 @@ import * as HomeScreenOperations from "./home.operations";
 
 export const HomeScreenContainer = connect((state:any, props:any) => {
 	return {
-		feed: state.home.feed
+		records: state.home.records,
 	}
 }, (dispatch:any) => {
 	return bindActionCreators(HomeScreenOperations, dispatch)
-})(HomeScreen);
+})(<any>HomeScreen);

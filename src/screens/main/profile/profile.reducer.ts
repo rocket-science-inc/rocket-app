@@ -9,7 +9,7 @@ const initState = {
 	records: []
 };
 
-export function HomeScreenReducer (state:any = initState, { type, payload }) {
+export function ProfileScreenReducer (state:any = initState, { type, payload }) {
 	switch (type) {
 		case TYPES.FEED_LOADED:
 			return {

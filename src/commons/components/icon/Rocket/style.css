@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'Rocket';
-  src:  url('fonts/Rocket.eot?u9cqe8');
-  src:  url('fonts/Rocket.eot?u9cqe8#iefix') format('embedded-opentype'),
-    url('fonts/Rocket.ttf?u9cqe8') format('truetype'),
-    url('fonts/Rocket.woff?u9cqe8') format('woff'),
-    url('fonts/Rocket.svg?u9cqe8#Rocket') format('svg');
+  src:  url('fonts/Rocket.eot?iawu8h');
+  src:  url('fonts/Rocket.eot?iawu8h#iefix') format('embedded-opentype'),
+    url('fonts/Rocket.ttf?iawu8h') format('truetype'),
+    url('fonts/Rocket.woff?iawu8h') format('woff'),
+    url('fonts/Rocket.svg?iawu8h#Rocket') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ri-scan-qrcode:before {
+  content: "\ea0b";
+}
 .ri-qrcode:before {
   content: "\ea0a";
 }

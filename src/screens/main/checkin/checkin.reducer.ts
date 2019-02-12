@@ -1,6 +1,8 @@
-let _state = { data: [] };
+const initState = {
+	checkedin: true
+};
 
-export function EventsScreenMapTabReducer (state:any = _state, action:any) {
+export function CheckinScreenReducer (state:any = initState, action:any) {
 	switch (action.type) {
         case "ANY":
             return {...state, data: [1]}
