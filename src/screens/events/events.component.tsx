@@ -26,7 +26,6 @@ export class EventsScreen extends React.Component<IEventsScreenProps> {
     };
 
     public render():any {
-        console.log(this.props.records)
         return (
             <Container>
                 <Header>
@@ -39,7 +38,7 @@ export class EventsScreen extends React.Component<IEventsScreenProps> {
                         <Title>Events</Title>
                     </Body>
                     <Right>
-                        <Button transparent>
+                        <Button transparent onPress={() => Actions.push("eventsFilters")}>
                             <Icon name="filter" size={20} />
                         </Button>
                     </Right>

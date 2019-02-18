@@ -1,6 +1,6 @@
 import React from "react"
 import { Provider, connect } from "react-redux"
-import { Router, Actions, Scene } from "react-native-router-flux"
+import { Router, Actions, Scene, Modal, Lightbox } from "react-native-router-flux"
 import { PersistGate } from "redux-persist/integration/react";
 import { Icon, Loader } from "@commons/components";
 import { GlobalStyles } from "@commons/styles";
@@ -13,6 +13,8 @@ import { ChatsScreenContainer } from "./screens/chats/chats.container";
 import { NotificationsScreenContainer } from "./screens/notifications/notifications.container";
 import { EventsScreenContainer } from "./screens/events/events.container";
 
+import { EventsFiltersLightboxContainer } from "./modals/events-filters/events.filters.container";
+
 import { store, persistor } from "./store";
 
 // Ignore the warnings from the 3rd party libraries
@@ -24,37 +26,43 @@ StyleSheet.build(GlobalStyles);
 const ReduxRouter = connect()(Router);
 
 const Scenes = Actions.create(
-	<Scene key="root">
-		<Scene key="main" hideNavBar tabs={true} showLabel={false} lazy={false}>
-			<Scene hideNavBar 
-				key="main.feed"
-				icon={() => <Icon name="home" size={22} />}
-				component={HomeScreenContainer}
-			/>
+	<Modal hideNavBar>
+		<Scene key="root">
+			<Scene key="main" hideNavBar tabs={true} showLabel={false} lazy={false}>
+				<Scene hideNavBar 
+					key="main.feed"
+					icon={() => <Icon name="home" size={22} />}
+					component={HomeScreenContainer}
+				/>
+				<Scene hideNavBar
+					key="main.checkin"
+					icon={() => <Icon name="map-pin" size={30} />}
+					component={CheckinScreenContainer}
+				/>
+				<Scene hideNavBar
+					key="main.profile"
+					icon={() => <Icon name="user" size={22} />}
+					component={ProfileScreenContainer}
+				/>
+			</Scene>
 			<Scene hideNavBar
-				key="main.checkin"
-				icon={() => <Icon name="map-pin" size={30} />}
-				component={CheckinScreenContainer}
-			/>
+				key="chats"
+				component={ChatsScreenContainer}
+			></Scene>
 			<Scene hideNavBar
-				key="main.profile"
-				icon={() => <Icon name="user" size={22} />}
-				component={ProfileScreenContainer}
-			/>
+				key="notifications"
+				component={NotificationsScreenContainer}
+			></Scene>
+			<Scene hideNavBar
+				key="events"
+				component={EventsScreenContainer}
+			></Scene>
 		</Scene>
 		<Scene hideNavBar
-			key="chats"
-			component={ChatsScreenContainer}
+			key="eventsFilters"
+			component={EventsFiltersLightboxContainer}
 		></Scene>
-		<Scene hideNavBar
-			key="notifications"
-			component={NotificationsScreenContainer}
-		></Scene>
-		<Scene hideNavBar initial
-			key="events"
-			component={EventsScreenContainer}
-		></Scene>
-	</Scene>,
+	</Modal>
 )
 
 export const App = () => (

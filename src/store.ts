@@ -10,6 +10,7 @@ import { ProfileScreenReducer } from "./screens/main/profile/profile.reducer";
 import { ChatsScreenReducer } from "./screens/chats/chats.reducer";
 import { NotificationsScreenReducer } from "./screens/notifications/notifications.reducer";
 import { EventsScreenReducer } from "./screens/events/events.reducer";
+import { EventsFiltersModalReducer} from "./modals/events-filters/events.filters.reducer";
 
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
@@ -21,7 +22,8 @@ const rootReducer = combineReducers({
 	profile: ProfileScreenReducer,
 	chats: ChatsScreenReducer,
 	notifications: NotificationsScreenReducer,
-	events: EventsScreenReducer
+	events: EventsScreenReducer,
+	eventsFilters: EventsFiltersModalReducer
 })
 
 if (process.env.NODE_ENV !== "production") {
