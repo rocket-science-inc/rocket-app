@@ -1,5 +1,5 @@
 const initState = {
-	checkedin: true
+	checkedin: false
 };
 
 export function CheckinScreenReducer (state:any = initState, action:any) {

@@ -7,6 +7,9 @@ import * as logger from "redux-logger";
 import { HomeScreenReducer } from "./screens/main/home/home.reducer";
 import { CheckinScreenReducer } from "./screens/main/checkin/checkin.reducer";
 import { ProfileScreenReducer } from "./screens/main/profile/profile.reducer";
+import { ChatsScreenReducer } from "./screens/chats/chats.reducer";
+import { NotificationsScreenReducer } from "./screens/notifications/notifications.reducer";
+import { EventsScreenReducer } from "./screens/events/events.reducer";
 
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
@@ -15,7 +18,10 @@ const middleware = [thunk]
 const rootReducer = combineReducers({
 	home: HomeScreenReducer,
 	checkin: CheckinScreenReducer,
-	profile: ProfileScreenReducer
+	profile: ProfileScreenReducer,
+	chats: ChatsScreenReducer,
+	notifications: NotificationsScreenReducer,
+	events: EventsScreenReducer
 })
 
 if (process.env.NODE_ENV !== "production") {

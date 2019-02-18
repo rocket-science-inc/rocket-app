@@ -1,9 +1,9 @@
 import * as React from "react";
 import {
         Container, Header, Body, Left,
-        Content, Title, Right, Button,
-        Badge, Text
+        Content, Title, Right, Button
 } from "native-base";
+import { Actions } from "react-native-router-flux";
 import { FlatList } from "react-native";
 import { EventCard, Icon } from "@commons/components";
 import { IHomeScreenOperations } from "./home.operations";
@@ -29,6 +29,10 @@ export class HomeScreen extends React.Component<IHomeScreenProps, IHomeScreenSta
         });
     };
 
+    private go(screen:string):void {
+        Actions.push(screen);
+    };
+
     private renderCard({ item }):any {
         return (<EventCard {...item} key={item.id} />)
     };
@@ -38,16 +42,19 @@ export class HomeScreen extends React.Component<IHomeScreenProps, IHomeScreenSta
             <Container>
                 <Header>
                     <Left>
-                        <Button transparent>
-                            <Icon name="bell" size={20} />
+                        <Button transparent onPress={() => this.go("events")}>
+                            <Icon name="calendar" size={20} />
                         </Button>
                     </Left>
                     <Body>
                         <Title>Rocket</Title>
                     </Body>
                     <Right>
-                        <Button transparent>
-                            <Icon name="calendar" size={20} />
+                        <Button transparent onPress={() => this.go("notifications")}>
+                            <Icon name="bell" size={20} />
+                        </Button>
+                        <Button transparent onPress={() => this.go("chats")}>
+                            <Icon name="send" size={20} />
                         </Button>
                     </Right>
                 </Header>

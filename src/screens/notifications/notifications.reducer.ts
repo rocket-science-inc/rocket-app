@@ -1,6 +1,6 @@
-let _state = { data: [] };
+let initState = { data: [] };
 
-export function SampleScreenReducer (state:any = _state, action:any) {
+export const NotificationsScreenReducer = (state:any = initState, action:any) => {
 	switch (action.type) {
         case "ANY":
             return {...state, data: [1]}

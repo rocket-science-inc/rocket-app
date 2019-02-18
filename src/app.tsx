@@ -7,9 +7,11 @@ import { GlobalStyles } from "@commons/styles";
 import StyleSheet from "react-native-extended-stylesheet"
 
 import { ProfileScreenContainer } from "./screens/main/profile/profile.container";
-import { SampleScreenContainer } from "./screens/sample/sample.container";
 import { HomeScreenContainer } from "./screens/main/home/home.container";
 import { CheckinScreenContainer } from "./screens/main/checkin/checkin.container";
+import { ChatsScreenContainer } from "./screens/chats/chats.container";
+import { NotificationsScreenContainer } from "./screens/notifications/notifications.container";
+import { EventsScreenContainer } from "./screens/events/events.container";
 
 import { store, persistor } from "./store";
 
@@ -40,6 +42,18 @@ const Scenes = Actions.create(
 				component={ProfileScreenContainer}
 			/>
 		</Scene>
+		<Scene hideNavBar
+			key="chats"
+			component={ChatsScreenContainer}
+		></Scene>
+		<Scene hideNavBar
+			key="notifications"
+			component={NotificationsScreenContainer}
+		></Scene>
+		<Scene hideNavBar initial
+			key="events"
+			component={EventsScreenContainer}
+		></Scene>
 	</Scene>,
 )
 

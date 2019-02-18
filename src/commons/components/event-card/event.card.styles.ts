@@ -8,12 +8,16 @@ export const styles = StyleSheet.create({
     title: {
         fontWeight: "bold"
     },
-    btn: {
-        flex: 1
+    content: {
+        display: "flex",
+        flexDirection: "row",
+        alignContent: "flex-start"
     },
-    btnIcon: {
-        color: "$brandPrimary",
-        fontSize: 16,
-        marginLeft: 6
+    actions: {
+        display: "flex",
+        flexDirection: "row"
+    },
+    btn: {
+        marginLeft: 8
     }
 });
