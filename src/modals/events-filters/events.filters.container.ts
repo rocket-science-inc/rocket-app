@@ -3,7 +3,7 @@ import { bindActionCreators } from "redux";
 import { EventsFiltersModal } from "./events.filters.component";
 import { EventsFiltersModalOperations } from "./events.filters.operations";
 
-export const EventsFiltersLightboxContainer = connect((state:any, props:any) => {
+export const EventsFiltersModalContainer = connect((state:any, props:any) => {
 	return {
 		filters: state.eventsFilters
 	}

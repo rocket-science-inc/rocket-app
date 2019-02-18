@@ -1,6 +1,6 @@
 import React from "react"
 import { Provider, connect } from "react-redux"
-import { Router, Actions, Scene, Modal, Lightbox } from "react-native-router-flux"
+import { Router, Actions, Scene, Modal } from "react-native-router-flux"
 import { PersistGate } from "redux-persist/integration/react";
 import { Icon, Loader } from "@commons/components";
 import { GlobalStyles } from "@commons/styles";
@@ -13,7 +13,8 @@ import { ChatsScreenContainer } from "./screens/chats/chats.container";
 import { NotificationsScreenContainer } from "./screens/notifications/notifications.container";
 import { EventsScreenContainer } from "./screens/events/events.container";
 
-import { EventsFiltersLightboxContainer } from "./modals/events-filters/events.filters.container";
+import { EventsFiltersModalContainer } from "./modals/events-filters/events.filters.container";
+import { QRCodeModalContainer } from "./modals/qrcode/qrcode.container";
 
 import { store, persistor } from "./store";
 
@@ -60,7 +61,11 @@ const Scenes = Actions.create(
 		</Scene>
 		<Scene hideNavBar
 			key="eventsFilters"
-			component={EventsFiltersLightboxContainer}
+			component={EventsFiltersModalContainer}
+		></Scene>
+		<Scene hideNavBar
+			key="qrcode"
+			component={QRCodeModalContainer}
 		></Scene>
 	</Modal>
 )

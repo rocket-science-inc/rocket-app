@@ -2,10 +2,9 @@ import * as React from "react";
 import {
         Container, Header, Body, Left,
         Content, Title, Right, Button,
-        Badge, Text
 } from "native-base";
-import { FlatList } from "react-native";
-import { EventCard, Icon } from "@commons/components";
+import { Actions } from "react-native-router-flux";
+import { Icon } from "@commons/components";
 import { IHomeScreenOperations } from "./profile.operations";
 
 export interface IProfileScreenProps extends IHomeScreenOperations {
@@ -35,7 +34,7 @@ export class ProfileScreen extends React.Component<IProfileScreenProps, IProfile
                         <Title>Profile</Title>
                     </Body>
                     <Right>
-                        <Button transparent>
+                        <Button transparent onPress={() => Actions.push("qrcode")}>
                             <Icon name="qrcode" size={20} />
                         </Button>
                     </Right>
