@@ -12,6 +12,7 @@ import { CheckinScreenContainer } from "./screens/main/checkin/checkin.container
 import { ChatsScreenContainer } from "./screens/chats/chats.container";
 import { NotificationsScreenContainer } from "./screens/notifications/notifications.container";
 import { EventsScreenContainer } from "./screens/events/events.container";
+import { EventScreenContainer } from "./screens/event/event.container";
 
 import { EventsFiltersModalContainer } from "./modals/events-filters/events.filters.container";
 import { QRCodeModalContainer } from "./modals/qrcode/qrcode.container";
@@ -57,6 +58,10 @@ const Scenes = Actions.create(
 			<Scene hideNavBar
 				key="events"
 				component={EventsScreenContainer}
+			></Scene>
+			<Scene hideNavBar
+				key="event"
+				component={EventScreenContainer}
 			></Scene>
 		</Scene>
 		<Scene hideNavBar

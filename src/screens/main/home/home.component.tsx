@@ -29,12 +29,17 @@ export class HomeScreen extends React.Component<IHomeScreenProps, IHomeScreenSta
         });
     };
 
-    private go(screen:string):void {
-        Actions.push(screen);
+    private go(screen:string, props?:any):void {
+        Actions.push(screen, props);
     };
 
     private renderCard({ item }):any {
-        return (<EventCard {...item} key={item.id} />)
+        return (
+            <EventCard
+                {...item} key={item.id}
+                onPress={() => this.go("event", {id: item.id, title: item.title})}
+            />
+        );
     };
 
     public render():any {
