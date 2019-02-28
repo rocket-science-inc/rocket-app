@@ -30,6 +30,7 @@ class Events {
         return Promise.resolve(events).then(events => {
             return events.filter(({ id }) => {
                 return id == eventId
+                //return true
             })[0]
         })
     };

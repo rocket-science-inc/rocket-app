@@ -2,7 +2,7 @@ import StyleSheet from "react-native-extended-stylesheet";
 
 export const styles = StyleSheet.create({
     date: {
-        color: "$brandDanger",
+        color: "red",
         textTransform: "uppercase"
     },
     title: {
