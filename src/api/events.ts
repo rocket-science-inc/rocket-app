@@ -29,8 +29,8 @@ class Events {
     public getById(eventId:string) {
         return Promise.resolve(events).then(events => {
             return events.filter(({ id }) => {
-                return id == eventId
-                //return true
+                //return id == eventId
+                return true
             })[0]
         })
     };

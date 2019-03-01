@@ -28,7 +28,7 @@ export class EventScreen extends React.Component<IEventScreenProps & IEventScree
         super(props);
         this.state = {
             items: [],
-            tab: "about"
+            tab: "agenda"
         };
     }
     
@@ -71,7 +71,7 @@ export class EventScreen extends React.Component<IEventScreenProps & IEventScree
         } else if (item.id == "tab" && this.state.tab == "about") {
             return <EventScreenAbout {...this.props.event} />
         } else if (item.id == "tab" && this.state.tab == "agenda") {
-            return <EventScreenAgenda />
+            return <EventScreenAgenda agenda={this.props.event.agenda} />
         };
         return null;
     };
