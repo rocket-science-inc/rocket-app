@@ -8,8 +8,11 @@ export const events = new Array(50).fill(0).map(() => {
         start: date.future().getTime(),
         details: `${lorem.paragraphs()}\n\n${lorem.paragraphs()}\n\n${lorem.paragraphs()}`,
         location: {
-            streetAddress: address.streetAddress(),
-            ...helpers.contextualCard().address
+            zipCode: address.zipCode(),
+            city: address.city(),
+            streetName: address.streetName(),
+            country: address.country(),
+            title: "Stereo Plaza"
         },
         agenda: new Array(random.number({
             min: 5,

@@ -28,9 +28,9 @@ export class EventScreen extends React.Component<IEventScreenProps & IEventScree
         super(props);
         this.state = {
             items: [],
-            tab: "agenda"
+            tab: "about"
         };
-    }
+    };
     
     public componentDidMount(){
         this.props.getEvents(this.props.id);

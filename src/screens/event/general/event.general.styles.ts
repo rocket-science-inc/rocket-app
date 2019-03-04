@@ -42,5 +42,11 @@ export const styles = StyleSheet.create({
         marginRight: 16,
         marginBottom: 4,
         borderRadius: 32
+    },
+    detailsContainer: {
+        paddingTop: 8
+    },
+    detailsText: {
+        fontSize: 16
     }
 });
