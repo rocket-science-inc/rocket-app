@@ -59,7 +59,7 @@ const Scenes = Actions.create(
 				key="events"
 				component={EventsScreenContainer}
 			></Scene>
-			<Scene hideNavBar initial
+			<Scene hideNavBar
 				key="event"
 				component={EventScreenContainer}
 			></Scene>
